@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+/* Reset all*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styling */
+html, body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.7em;
+}
+
+/*  change the words of link color and remove underline*/
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+h2 {
+	padding-top: 10px;
+}
+
+/* Utility Classes */
+.container {
+	margin: auto;
+	max-width: 1100px;
+	overflow: auto;
+	padding: 10px 20px;
+}
+
+.text-primary {
+	color: #f7c08a;
+	/* color: #66ff99; */
+}
+
+.lead {
+	padding-top: 20px;
+	font-size: 20px;
+}
+
+.btn-light {
+	background: #f4f4f4;
+	color: #333;
+}
+
+.bg-dark {
+	background: #333;
+	color: #fff;
+}
+
+.bg-light {
+	background: #f4f4f4;
+	color: #333;
+}
+
+.clr {
+	clear: both;
+}
+
+#training table {
+	border:1px dotted gray;
+	border-style: dotted;
+	border-collapse: collapse;
+}
+
+#training table, th, td {
+	border: 1px dotted gray;
+	border-style: dotted;
+
+	border-width: 2px;
+	/* border-radius: 10px; */
+	text-align: center;
+}
+
+#date {
+	background: #444;
+}
+
+#showcase {
+	background: url(image/showcase2.jpg) no-repeat center center/cover;
+	height: 600px;
+}
+
+#showcase .showcase-content {
+	color: #fff;
+	text-align: center;
+	/* push down the content */
+	padding-top: 170px;
+}
+
+#showcase .showcase-content h1 {
+	font-size: 60px;
+	line-height: 1.2em;
+}
+
+#showcase .showcase-content p {
+	padding-bottom: 20px;
+	line-height: 1.7em;
+}
+
+/* Home Info */
+#home-info {
+	height: 450px;
+}
+
+#home-info .info-img {
+	float: left;
+	width: 50%;
+	background: url('image/photo1.jpg') no-repeat center center/cover;
+	min-height: 100%;
+}
+
+#home-info .info-content {
+	float: right;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	padding: 50px 30px;
+	overflow: hidden;
+}
+
+#home-info .info-content .main-content {
+	line-height: 2.7;
+	padding: 20px 30px;
+}
+
+#frame {
+	background: #7B7D7D;
+	line-height: 2.7;
+}
+
+#contactme {
+	background: url('image/contactme.jpg') no-repeat center center/cover;
+}
+
+#contectinfo {
+	background: url('image/contectinfo.jpg') no-repeat center center/cover;
+}
+/* Footer */
+#main-footer {
+	text-align: center;
+	background: #444;
+	color: #fff;
+	padding: 20px;
+}
