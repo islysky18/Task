@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .l-heading {
+        text-align: center;
+        color: purple;
+      }
+      .main-content {
+        font-family: sans-serif;
+        font-size: large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      //Splice(addIndex, remove#OfItems, item1, item2,....)
+
+      var fruits = ["Apple", "Banana", "Lemon", "Orange"];
+      //add:
+      fruits.splice(2, 0, "PineApple", "Kiwi");
+      //[ 'Apple', 'Banana', 'PineApple', 'Kiwi', 'Lemon', 'Orange' ]
+
+      //remove:
+      fruits.splice(2, 2);
+      //[ 'Apple', 'Banana', 'Lemon', 'Orange' ]
+      document.write(fruits + "<br>");
+
+      //Slice(startIndex, LastIndex), the item of LastIndex will not be counted
+      var fruits1 = ["Apple", "Banana", "Lemon", "Orange"];
+      var sliceFruits1 = fruits1.slice(0, 3);
+      //["Apple", "Banana", "Lemon"];
+      document.write(sliceFruits1);
+    </script>
+
+    <!-- html wrappers:
+    An HTML wrapper allows you to adjust content within a webpage.
+    For example:
+    
+    In html:
+    <div class="wrapper">
+        Hi, this is just an example
+    </div>
+    
+    In CSS:
+    .wrapper{
+        margin: 0 auto;
+        background-color: purple;
+    }
+
+-->
+
+    <h1 class="l-heading">Hello</h1>
+    <p class="main-content">
+      Lorem ipsum dolor
+      <span style="color: blue;"><sup>SuperText</sup></span> amet consectetur
+      adipisicing elit. <span style="color: brown;"><sub>SubText</sub></span
+      >, neque quia est quae nulla vel recusandae quam nisi, ratione omnis
+      eligendi voluptate fugit esse nihil aspernatur dolorum modi animi sunt.
+    </p>
+  </body>
+</html>
