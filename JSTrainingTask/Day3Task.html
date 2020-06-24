@@ -1,0 +1,112 @@
+<!-- 
+1. Add a new property to an Object using defineProperty
+2. Find the oldest Guy using reduce
+3. Diff betn es5 vs es6
+4. Find out more on prototypes
+-->
+
+<!-- Q1 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Demo: Edit Property Descriptor</h1>
+    <p id="p1">Enumerable Properties:</p>
+    <script>
+      //   "use strict";
+      function Student() {
+        this.name = "Steve";
+        this.gender = "Male";
+      }
+
+      var student1 = new Student();
+      Object.defineProperty(student1, "name", { writable: false });
+
+      const ageObj = {};
+      Object.defineProperties(ageObj, {
+        age: {
+          value: 26,
+          writable: true,
+        },
+      });
+
+      try {
+        student1.name = "James";
+        // document.getElementById("p1").innerHTML +=
+        //   student1.name + " is " + student1.age + " years old";
+        document.getElementById("p1").innerHTML +=
+          student1.name + " is " + ageObj.age + " years old";
+      } catch (error) {
+        document.getElementById("p1").innerHTML += error.message;
+      }
+      //   document.write(ageObj.age);
+    </script>
+
+    <!-- Q2 -->
+    <script>
+      var pilots = [
+        {
+          id: 10,
+          name: "Poe Dameron",
+          years: 14,
+        },
+        {
+          id: 2,
+          name: "Temmin 'Snap' Wexley",
+          years: 30,
+        },
+        {
+          id: 41,
+          name: "Tallissan Lintra",
+          years: 16,
+        },
+        {
+          id: 99,
+          name: "Ello Asty",
+          years: 22,
+        },
+      ];
+
+      // let oldest = pilots.reduce((acc, person) => {
+      //   if (acc < person.years) {
+      //     acc = person.years;
+      //   }
+      //   return acc;
+      // }, 0);
+      // console.log(typeof oldest);
+      // console.log("Oldest Guy Year: " + oldest.name);
+
+      let oldest = pilots.reduce((acc, person) => {
+        if (acc.years > person.years) {
+          return acc;
+        } else {
+          return person;
+        }
+      }, {});
+      // console.log(typeof oldest);
+      console.log("Oldest Guy: " + oldest.name);
+      document.write("Oldest Guy: " + oldest.name);
+      // console.log(oldest);
+    </script>
+
+    <!-- Q3 -->
+    <!--                                 ES5                                                -->
+    <!--  
+    Defining Variables:only define the variables by using the var keyword, 
+    Object Manipulation: time-consuming than ES6, 
+    Arrow Functions: both function and return keywords are used to define a function 
+    Loops: there is a use of for loop to iterate over elements.-->
+
+    <!--                                 ES6                                                -->
+    <!-- 
+    Defining Variables: there are two new ways to define variables that are let and const.
+    Object Manipulation: Due to destructuring and speed operators, object manipulation can be processed more smoothly in ES6.
+    Arrow Functions: An arrow function is a new feature introduced in ES6 by which we don't require the function keyword to define the function.
+    introduced the concept of for?of loop to perform an iteration over the values of the iterable objects.
+    -->
+  </body>
+</html>
