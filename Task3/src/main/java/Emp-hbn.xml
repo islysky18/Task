@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- default, id name="id" will be the entity of database's table name -->
+<hibernate-mapping>
+	<class name="com.tobias.HibernateDemo.Emp" table="emp_20">
+		<id name="id" column="emp_id"></id>
+		<property name="name" column="emp_name"></property>
+		<!-- <list name="phoneno" cascade="all"> <key column="id"></key> <index 
+			column="type"></index> <one-to-many class="com.tobias.HibernateDemo.PhoneNumber"/> 
+			</list> -->
+		<map name="phoneno" cascade="all">
+			<key column="id"></key>
+			<map-key column="phonenumber" type="string"></map-key>
+<!-- 			<element column="username" type="string"></element> -->
+			<one-to-many class="com.tobias.HibernateDemo.PhoneNumber" />
+		</map>
+
+
+		<!-- <set name="phoneno" cascade="all"> <key column="id"></key> <one-to-many 
+			class="com.tobias.HibernateDemo.PhoneNumber" /> </set> -->
+	</class>
+
+	<class name="com.tobias.HibernateDemo.PhoneNumber"
+		table="phone_20">
+		<id name="pid" column="phone_id"></id>
+		<property name="network" column="phone_network"></property>
+		<property name="phonenumber" column="phone_number"></property>
+	</class>
+</hibernate-mapping>
