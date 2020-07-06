@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+    "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+
+<!-- default, id name="id" will be the entity of database's table name -->
+<hibernate-mapping>
+	<class name="in.cdac.User" table="HBM_USER">
+		<id name="id" type="int" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="username" column="name" length="50" type="string" />
+		<property name="password" column="password" length="50" type="string" />
+		<property name="mobile" column="mobile" length="50" type="string" />
+		<property name="email" column="email" length="50" type="string" />
+
+	</class>
+</hibernate-mapping>
